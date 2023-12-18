@@ -1,0 +1,39 @@
+{
+  "name": "@talismn/signet-apps-sdk",
+  "version": "0.0.5",
+  "description": "Signet Apps Sdk",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "jest --verbose --coverage"
+  },
+  "author": "chrisling-dev",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.10.5",
+    "@typescript-eslint/eslint-plugin": "^6.10.0",
+    "@typescript-eslint/parser": "^6.10.0",
+    "eslint": "^8.53.0",
+    "eslint-plugin-eslint-plugin": "^5.1.1",
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TalismanSociety/signet-apps-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TalismanSociety/signet-apps-sdk/issues"
+  },
+  "homepage": "https://github.com/TalismanSociety/signet-apps-sdk#readme",
+  "dependencies": {
+    "react": "^18.2.0"
+  }
+}
