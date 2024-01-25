@@ -16,6 +16,8 @@ bun add @talismn/signet-apps-sdk
 
 ### Using the SDK
 
+Check out this [demo app](https://github.com/talismansociety/signet-apps-demo) for a complete example of how a dapp can support both EOA and multisig transactions with our SDK.
+
 **init()**
 The `init()` call allows you to check whether user is using your dapp within Signet.
 
