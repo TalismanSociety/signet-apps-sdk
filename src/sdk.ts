@@ -9,7 +9,7 @@ export class SignetSdk {
 
   async init() {
     try {
-      return await this.messageService.send("iframe(init)", [])
+      return await this.messageService.send("iframe(init)", [], 500)
     } catch (e) {
       // send expects a response, but init will not respond anything. This is fine
       return false

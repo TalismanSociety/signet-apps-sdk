@@ -1,6 +1,6 @@
 {
   "name": "@talismn/signet-apps-sdk",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Signet Apps Sdk",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -15,6 +15,7 @@
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^20.10.5",
+    "@types/react": "^18.2.48",
     "@typescript-eslint/eslint-plugin": "^6.10.0",
     "@typescript-eslint/parser": "^6.10.0",
     "eslint": "^8.53.0",
