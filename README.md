@@ -19,7 +19,7 @@ bun add @talismn/signet-apps-sdk
 Check out this [demo app](https://github.com/talismansociety/signet-apps-demo) for a complete example of how a dapp can support both EOA and multisig transactions with our SDK.
 
 **init()**
-The `init()` call allows you to check whether user is using your dapp within Signet.
+Check whether user is using your dapp within Signet.
 
 ```javascript
 import { SignetSdk } from "@talismn/signet-apps-sdk"
@@ -43,7 +43,7 @@ const App = () => {
 ```
 
 **getAccount()**
-Inject the selected signet account into your dapp! The `sdk` is also exposed from our hook:
+Inject the selected signet account into your dapp. The `sdk` is also exposed from our hook:
 
 ```tsx
 import { useSignetSdk, VaultAccount } from "@talismn/signet-apps-sdk"
@@ -76,7 +76,7 @@ const App = () => {
 ```
 
 **send(calldataHex: string)**
-To send a transaction, just use the `send` api:
+Send a transaction to Signet to be wrapped as a multisig transaction:
 
 ```javascript
 import { SendTxRespond } from '@talismn/signet-apps-sdk'
