@@ -31,7 +31,7 @@ const inSignet = await sdk.init()
 
 If you're using React, we have a hook that handles that for you:
 
-```jsx
+```tsx
 import { useSignetSdk } from "@talismn/signet-apps-sdk"
 
 const App = () => {
@@ -45,32 +45,33 @@ const App = () => {
 **getAccount()**
 Inject the selected signet account into your dapp! The `sdk` is also exposed from our hook:
 
-```jsx
+```tsx
 import { useSignetSdk, VaultAccount } from "@talismn/signet-apps-sdk"
 
 const App = () => {
-    const { inSignet, sdk } = useSignetSdk()
-    const [injectedVault, setInjectedVault] = useState<VaultAccount>()
+  const { inSignet, sdk } = useSignetSdk()
+  const [injectedVault, setInjectedVault] = useState<VaultAccount>()
 
-    const getVault = useCallback(async () => {
-        const vault = await sdk.getAccount()
-        setInjectedVault(vault)
-    }, [])
+  const getVault = useCallback(async () => {
+    const vault = await sdk.getAccount()
+    setInjectedVault(vault)
+  }, [])
 
-    // depending on how your dapp is built, you may want to trigger this via a button click instead of useEffect
-    useEffect(() => {
-        if(inSignet) getVault()
-    }, [inSignet, getVault])
+  // depending on how your dapp is built, you may want to trigger this via a button click instead of useEffect
+  useEffect(() => {
+    if (inSignet) getVault()
+  }, [inSignet, getVault])
 
-    if (inSignet && injectedVault) return (
-        <div>
-            <p>{injectedVault.name}</p>
-            <p>{injectedVault.address}</p>
-        </div>
+  if (inSignet && injectedVault)
+    return (
+      <div>
+        <p>{injectedVault.name}</p>
+        <p>{injectedVault.address}</p>
+      </div>
     )
 
-    // handle normal EOA flow
-    return <button>Connect wallet</button>
+  // handle normal EOA flow
+  return <button>Connect wallet</button>
 }
 ```
 
