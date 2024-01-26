@@ -1,4 +1,3 @@
-import crypto from "crypto"
 import { Methods } from "./types"
 
 // this only validates the format of message
@@ -9,6 +8,15 @@ const isValidMessage = (message: MessageEvent) => {
   const { id, type, res } = data
 
   return id !== undefined && type !== undefined && res !== undefined
+}
+
+function makeRandomString(length: number = 16) {
+  let result = ""
+  while (result.length < length) {
+    // convert to hex character
+    result += Math.floor(Math.random() * 16).toString(16)
+  }
+  return result
 }
 
 type Options = {
@@ -48,7 +56,7 @@ export class MessageService {
     target: string = "*",
     overrideWindow?: Window | null
   ): Promise<Methods[T]["expects"]> {
-    const id = crypto.randomBytes(16).toString("hex")
+    const id = makeRandomString(16)
 
     const targetWindow = overrideWindow || this.defaultWindow
     if (this.options.debug) console.log(`MessageService posted ${type} message`, payload)
