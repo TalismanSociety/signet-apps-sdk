@@ -1,10 +1,12 @@
 import { MessageService } from "./MessageService"
 
 export class SignetSdk {
-  private messageService = new MessageService(window.parent, { debug: true })
-  constructor() {
+  private messageService: MessageService
+  constructor(public option: { debug?: boolean } = {}) {
     if (typeof window === "undefined")
       throw new Error("SignetSdk can only be used in an iframe of Signet")
+
+    this.messageService = new MessageService(window.parent, this.option)
   }
 
   async init() {
